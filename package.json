@@ -6,9 +6,11 @@
   "scripts": {
     "start": "bin/www",
     "develop": "nodemon -q bin/www",
-    "migrate": "./node_modules/.bin/sequelize-cli db:migrate",
-    "rollback": "./node_modules/.bin/sequelize-cli db:migrate:undo",
-    "seed": "./node_modules/.bin/sequelize-cli db:seed:all"
+    "db:create": "./node_modules/.bin/sequelize-cli db:create",
+    "db:drop": "./node_modules/.bin/sequelize-cli db:drop",
+    "db:migrate": "./node_modules/.bin/sequelize-cli db:migrate",
+    "db:rollback": "./node_modules/.bin/sequelize-cli db:migrate:undo",
+    "db:seed": "./node_modules/.bin/sequelize-cli db:seed:all"
   },
   "dependencies": {
     "ejs": "^3.1.6",

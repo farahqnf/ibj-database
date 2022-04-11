@@ -17,6 +17,8 @@ yarn develop
 
 Di dalam repository ini sudah terdapat beberapa script yang dapat digunakan dalam memanage database, yaitu:
 
-- `yarn migrate` digunakan untuk menjalankan database migration
-- `yarn seed` digunakan untuk melakukan seeding
-- `yarn rollback` digunakan untuk membatalkan migrasi terakhir
+- `yarn db:create` digunakan untuk membuat database
+- `yarn db:drop` digunakan untuk menghapus database
+- `yarn db:migrate` digunakan untuk menjalankan database migration
+- `yarn db:seed` digunakan untuk melakukan seeding
+- `yarn db:rollback` digunakan untuk membatalkan migrasi terakhir
