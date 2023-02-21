@@ -1,10 +1,14 @@
-/**
- * @file contains entry point of controllers api v1 module
- * @author Fikri Rahmat Nurhidayat
- */
 
-const post = require("./post");
+const courseCategoryController = require("./courseCategoryController");
+const coursesController = require("./coursesController");
+const userCoursesController = require("./userCoursesController");
+const usersController = require("./usersController");
+const authController = require("./authController");
 
 module.exports = {
-  post,
+  courseCategoryController,
+  coursesController,
+  userCoursesController,
+  authController,
+  usersController
 };

@@ -1,14 +1,9 @@
-/**
- * @file Manages database connection configuration.
- * @author Fikri Rahmat Nurhidayat
- */
 
-/** Destruct environment variable to get database configuration */
 const {
-  DB_USERNAME = null,
-  DB_PASSWORD = null,
-  DB_HOST = "127.0.0.1",
-  DB_NAME = "database",
+  DB_USERNAME = "postgres",
+  DB_PASSWORD = "24jan01",
+  DB_HOST = "localhost",
+  DB_NAME = "ibj_db",
 } = process.env;
 
 module.exports = {
