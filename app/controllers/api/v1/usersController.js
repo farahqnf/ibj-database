@@ -38,7 +38,7 @@ module.exports = {
 
   addNew(req, res) {
     usersService
-      .create(req.body)
+      .create(req.body, res)
       .then((courses) => {
         res.status(201).json({
           status: "CREATED",

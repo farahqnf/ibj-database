@@ -1,10 +1,11 @@
 const { body } = require("express-validator");
 
 module.exports = {
+    
   nameValidate: [
     body("name").notEmpty().withMessage({
       code: "E-001",
-      message: "Nama can't be empty",
+      message: "Name can't be empty",
     }),
   ],
   
@@ -23,44 +24,26 @@ module.exports = {
     }),
   ],
 
-  productValidate: [
-    body("harga").notEmpty().withMessage({
+  coursesValidate: [
+    body("title").notEmpty().withMessage({
+      code: "E-005",
+      message: "Title can't be empty",
+    }),
+    body("course_category_id").notEmpty().withMessage({
       code: "E-006",
-      message: "Harga can't be empty",
+      message: "Id Course Category can't be empty",
     }),
-    body("deskripsi").notEmpty().withMessage({
+  ],
+
+  userCoursesValidate: [
+    body("users_id").notEmpty().withMessage({
       code: "E-007",
-      message: "Deskripsi can't be empty",
+      message: "Id User can't be empty",
     }),
-    body("idCategory").notEmpty().withMessage({
+    body("course_id").notEmpty().withMessage({
       code: "E-008",
-      message: "Id Category can't be empty",
+      message: "Id Course can't be empty",
     }),
   ],
-  productUpdateValidate: [
-    body("harga").notEmpty().withMessage({
-      code: "E-006",
-      message: "Harga can't be empty",
-    }),
-    body("deskripsi").notEmpty().withMessage({
-      code: "E-007",
-      message: "Deskripsi can't be empty",
-    }),
-  ],
-  bidValidate: [
-    body("harga").notEmpty().withMessage({
-      code: "E-006",
-      message: "Harga can't be empty",
-    }),
-    body("productId").notEmpty().withMessage({
-      code: "E-0016",
-      message: "Product Id can't be empty",
-    }),
-  ],
-  orderUpdateValidate: [
-    body("status").notEmpty().withMessage({
-      code: "E-017",
-      message: "Status can't be empty",
-    }),
-  ],
+
 };

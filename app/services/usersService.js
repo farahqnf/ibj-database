@@ -1,4 +1,5 @@
 const usersRepository = require("../repositories/usersRepository");
+const { Users } = require("../models");
 
 module.exports = {
     async list() {
@@ -15,9 +16,20 @@ module.exports = {
         }
     },
 
-    create(data) {
+    create(data, res) {
         try {
+            const email = data.email;
+            let existingEmail = Users.findOne({ where: { email: email } });
+
+            if (existingEmail) {
+                res.status(409).json({
+                    status: 'Error',
+                    message: 'Email already exists'
+                });
+                return;
+            }
             return usersRepository.create(data);
+
         } catch (error) {
             throw error;
         }
