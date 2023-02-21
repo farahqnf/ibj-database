@@ -1,19 +1,31 @@
-This repository was created to fulfill the IBJ Internship Program Assessment - Technical Test Back-End Developer Intern.
+# IBJ Database and API
+
+This project was created to fulfill the IBJ Internship Program Assessment - Technical Test Back-End Developer Intern.
+It is a backend development using the Node.js programming language and the Service Repository Pattern, which means it contains model, controller, service, and repository modules.
+
+## Installation
+
+Run this command to install dependencies.
+
+```bash
+npm install
+```
+
+## Create Database
+
+- Set the postgres password in the database.js file in the config folder
+- Run command `npx sequelize-cli db:create` to create database
+- Run command `npx sequelize-cli db:migrate` to run database migrations
 
 ## Getting Started
 
-Lalu untuk menjalankan development server, kalian tinggal jalanin salah satu script di package.json, yang namanya `develop`.
+Then to run the development server, run one of the scripts in package.json named `develop`.
 
 ```sh
-yarn develop
+npm run develop
 ```
 
-## Database Management
+## Contact
 
-Di dalam repository ini sudah terdapat beberapa script yang dapat digunakan dalam memanage database, yaitu:
-
-- `yarn db:create` digunakan untuk membuat database
-- `yarn db:drop` digunakan untuk menghapus database
-- `yarn db:migrate` digunakan untuk menjalankan database migration
-- `yarn db:seed` digunakan untuk melakukan seeding
-- `yarn db:rollback` digunakan untuk membatalkan migrasi terakhir
+- Name  : Farah Qatrunnada Naurah Firdausi
+- Email : qatrunnadafarah@gmail.com
