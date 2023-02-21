@@ -94,27 +94,4 @@ module.exports = {
         });
       });
   },
-
-//   setcourse_categories(req, res, next) {
-//     course_categories.findByPk(req.params.id)
-//       .then((course_categories) => {
-//         if (!course_categories) {
-//           res.status(404).json({
-//             status: "FAIL",
-//             message: "Course Categories not found!",
-//           });
-
-//           return;
-//         }
-
-//         req.course_categories = course_categories;
-//         next()
-//       })
-//       .catch((err) => {
-//         res.status(404).json({
-//           status: "FAIL",
-//           message: "Course Categories not found!",
-//         });
-//       });
-//   },
 };

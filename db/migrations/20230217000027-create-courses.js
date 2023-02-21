@@ -13,6 +13,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       course_category_id: {
+        allowNull: false,
         type: Sequelize.INTEGER
       },
       createdAt: {

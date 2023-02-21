@@ -4,6 +4,9 @@ const apiRouter = express.Router();
 const YAML = require('yamljs');
 const swaggerDocument = YAML.load('./openapi.yaml');
 const redoc = require('redoc-express');
+const { runValidation, checkName, checkEmail, checkPassword } = require('../app/middlewares/validation');
+const bodyValidation = require("../app/middlewares/bodyValidation");
+const validate = require("../app/middlewares/validate");
 
 
 // CRUD for Course Category
@@ -29,14 +32,14 @@ apiRouter.get("/user-courses/:id", controllers.api.v1.userCoursesController.getB
 
 // CRUD for Users
 apiRouter.get("/users/list", controllers.api.v1.usersController.list);
-apiRouter.post("/users/add", controllers.api.v1.usersController.addNew);
+apiRouter.post("/users/add", bodyValidation.nameValidate, bodyValidation.authValidate, validate.validate, controllers.api.v1.usersController.addNew);
 apiRouter.post("/users/update/:id", controllers.api.v1.usersController.update);
 apiRouter.get("/users/delete/:id", controllers.api.v1.usersController.delete);
 apiRouter.get("/users/:id", controllers.api.v1.usersController.getById);
 
 // ENDOPOINT for Admin
-apiRouter.post("/admin/register", controllers.api.v1.authController.register);
-apiRouter.post("/admin/login", controllers.api.v1.authController.login);
+apiRouter.post("/admin/register", bodyValidation.nameValidate, bodyValidation.authValidate, validate.validate, controllers.api.v1.authController.register);
+apiRouter.post("/admin/login", bodyValidation.authValidate, validate.validate, controllers.api.v1.authController.login);
 apiRouter.get("/admin/whoami", controllers.api.v1.authController.authorize, controllers.api.v1.authController.whoAmI);
 
 // API Documentation

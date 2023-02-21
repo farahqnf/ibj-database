@@ -3,28 +3,28 @@ const {
   Model
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
-  class courses extends Model {
+  class Courses extends Model {
     static associate(models) {
       // have a relation many to one with categories
-      courses.belongsTo(models.course_categories, {
+      Courses.belongsTo(models.Course_categories, {
         foreignKey: 'course_category_id'
       });
 
       // have a relation one to many with user_courses
-      courses.hasMany(models.user_courses, {
+      Courses.hasMany(models.User_courses, {
         foreignKey: 'course_id'
       });
     }
   }
-  courses.init({
+  Courses.init({
     title: DataTypes.STRING,
     course_category_id: DataTypes.INTEGER,
     createdAt: DataTypes.DATE,
     updatedAt: DataTypes.DATE,
   }, {
     sequelize,
-    modelName: 'courses',
+    modelName: 'Courses',
     timestamps: true,
   });
-  return courses;
+  return Courses;
 };

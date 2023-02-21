@@ -56,10 +56,10 @@ module.exports = {
   update(req, res) {
     userCoursesService
       .update(req.params.id, req.body)
-      .then((courses) => {
+      .then((userCourses) => {
         res.status(200).json({
           status: "OK",
-          data: courses,
+          data: userCourses,
         });
       })
       .catch((err) => {

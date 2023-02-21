@@ -1,16 +1,16 @@
-const { users } = require("../models");
+const { Users } = require("../models");
 
 module.exports = {
   findAll() {
-    return users.findAll();
+    return Users.findAll();
   },
 
   create(data) {
-    return users.create(data);
+    return Users.create(data);
   },
 
   update(id, updateArgs) {
-    return users.update(updateArgs, {
+    return Users.update(updateArgs, {
       where: {
         id,
       },
@@ -18,16 +18,16 @@ module.exports = {
   },
 
   delete(id) {
-    return users.destroy({
+    return Users.destroy({
       where: { id }
     });
   },
 
   find(id) {
-    return users.findByPk(id);
+    return Users.findByPk(id);
   },
 
   getTotalPost() {
-    return users.count();
+    return Users.count();
   },
 };

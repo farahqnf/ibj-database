@@ -1,16 +1,16 @@
-const { course_categories } = require("../models");
+const { Course_categories } = require("../models");
 
 module.exports = {
   findAll() {
-    return course_categories.findAll();
+    return Course_categories.findAll();
   },
 
   create(data) {
-    return course_categories.create(data);
+    return Course_categories.create(data);
   },
 
   update(id, updateArgs) {
-    return course_categories.update(updateArgs, {
+    return Course_categories.update(updateArgs, {
       where: {
         id,
       },
@@ -18,16 +18,16 @@ module.exports = {
   },
 
   delete(id) {
-    return course_categories.destroy({
+    return Course_categories.destroy({
       where: { id }
     });
   },
 
   find(id) {
-    return course_categories.findByPk(id);
+    return Course_categories.findByPk(id);
   },
 
   getTotalPost() {
-    return course_categories.count();
+    return Course_categories.count();
   },
 };

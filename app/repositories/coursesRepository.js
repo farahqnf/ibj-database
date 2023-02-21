@@ -1,16 +1,16 @@
-const { courses } = require("../models");
+const { Courses } = require("../models");
 
 module.exports = {
   findAll() {
-    return courses.findAll();
+    return Courses.findAll();
   },
 
   create(data) {
-    return courses.create(data);
+    return Courses.create(data);
   },
 
   update(id, updateArgs) {
-    return courses.update(updateArgs, {
+    return Courses.update(updateArgs, {
       where: {
         id,
       },
@@ -18,16 +18,16 @@ module.exports = {
   },
 
   delete(id) {
-    return courses.destroy({
+    return Courses.destroy({
       where: { id }
     });
   },
 
   find(id) {
-    return courses.findByPk(id);
+    return Courses.findByPk(id);
   },
 
   getTotalPost() {
-    return courses.count();
+    return Courses.count();
   },
 };
