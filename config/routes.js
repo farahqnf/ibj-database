@@ -1,8 +1,6 @@
 const express = require("express");
 const controllers = require("../app/controllers");
 const apiRouter = express.Router();
-const YAML = require('yamljs');
-const redoc = require('redoc-express');
 const bodyValidation = require("../app/middlewares/bodyValidation");
 const validate = require("../app/middlewares/validate");
 
