@@ -2,7 +2,6 @@ const express = require("express");
 const controllers = require("../app/controllers");
 const apiRouter = express.Router();
 const YAML = require('yamljs');
-const swaggerDocument = YAML.load('./openapi.yaml');
 const redoc = require('redoc-express');
 const bodyValidation = require("../app/middlewares/bodyValidation");
 const validate = require("../app/middlewares/validate");
@@ -40,18 +39,6 @@ apiRouter.post("/user-courses/add", bodyValidation.userCoursesValidate, validate
 apiRouter.post("/user-courses/update/:id", bodyValidation.userCoursesValidate, validate.validate, controllers.api.v1.userCoursesController.update);
 apiRouter.get("/user-courses/delete/:id", controllers.api.v1.userCoursesController.delete);
 apiRouter.get("/user-courses/:id", controllers.api.v1.userCoursesController.getById);
-
-// API Documentation
-apiRouter.get("/docs/swagger.json", (req, res) => {
-  res.status(200).json(swaggerDocument)
-});
-
-apiRouter.get(
-  '/docs', redoc({
-    title: 'API Docs',
-    specUrl: 'docs/swagger.json'
-  })
-);
 
 apiRouter.get("/api/v1/errors", () => {
   throw new Error(
